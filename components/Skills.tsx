@@ -12,7 +12,7 @@ export function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-white"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800"
     >
       <div className="mx-auto max-w-6xl">
         <motion.div
@@ -21,7 +21,7 @@ export function Skills() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl tracking-tight">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl tracking-tight">
             Skills & Expertise
           </h2>
         </motion.div>
@@ -36,10 +36,10 @@ export function Skills() {
               className="group"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 rounded-lg bg-gray-50 text-gray-900 group-hover:bg-gray-100 transition-colors">
+                <div className="p-2 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 group-hover:bg-gray-100 dark:group-hover:bg-gray-600 transition-colors">
                   <skillGroup.icon size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                   {skillGroup.category}
                 </h3>
               </div>
@@ -57,11 +57,11 @@ export function Skills() {
                       duration: 0.3,
                       delay: groupIndex * 0.1 + skillIndex * 0.03,
                     }}
-                    className="text-base text-gray-600 hover:text-gray-900 transition-colors cursor-default"
+                    className="text-base text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors cursor-default"
                   >
                     {skill}
                     {skillIndex < skillGroup.items.length - 1 && (
-                      <span className="text-gray-300 ml-2">•</span>
+                      <span className="text-gray-300 dark:text-gray-600 ml-2">•</span>
                     )}
                   </motion.span>
                 ))}

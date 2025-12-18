@@ -14,7 +14,7 @@ export function Projects() {
     <section
       id="projects"
       ref={ref}
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
     >
       <div className="mx-auto max-w-7xl">
         <motion.div
@@ -23,7 +23,7 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl tracking-tight">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl tracking-tight">
             Featured Projects
           </h2>
         </motion.div>
@@ -55,10 +55,10 @@ export function Projects() {
 
               {/* Project Content */}
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-base text-gray-600 leading-relaxed mb-4">
+                <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                   {project.description}
                 </p>
 
@@ -67,11 +67,11 @@ export function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-sm text-gray-600"
+                      className="text-sm text-gray-600 dark:text-gray-400"
                     >
                       {tag}
                       {project.tags.indexOf(tag) < project.tags.length - 1 && (
-                        <span className="text-gray-300 ml-2">•</span>
+                        <span className="text-gray-300 dark:text-gray-600 ml-2">•</span>
                       )}
                     </span>
                   ))}
@@ -83,7 +83,7 @@ export function Projects() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-blue-600 transition-colors group/link"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors group/link"
                   >
                     View Live Site
                     <ExternalLink className="h-4 w-4 transition-transform group-hover/link:translate-x-1" />

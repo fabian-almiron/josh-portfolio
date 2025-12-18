@@ -50,7 +50,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const theme = localStorage.getItem('theme');
+                  if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -58,10 +74,11 @@ export default function RootLayout({
         <Toaster
           position="bottom-right"
           toastOptions={{
+            className: "dark:bg-gray-800 dark:text-white dark:border-gray-700",
             style: {
-              background: "#1a1a1a",
-              color: "#ffffff",
-              border: "1px solid #2a2a2a",
+              background: "#ffffff",
+              color: "#1f2937",
+              border: "1px solid #e5e7eb",
             },
             success: {
               iconTheme: {

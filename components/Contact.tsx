@@ -65,7 +65,7 @@ export function Contact() {
     <section
       id="contact"
       ref={ref}
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800"
     >
       <div className="mx-auto max-w-6xl">
         <motion.div
@@ -74,7 +74,7 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl tracking-tight">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl tracking-tight">
             Get In Touch
           </h2>
         </motion.div>
@@ -88,11 +88,11 @@ export function Contact() {
             className="lg:col-span-2 space-y-8"
           >
             <div>
-              <h3 className="mb-4 text-2xl font-bold text-gray-900">
-                Let's Connect
+              <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+                Let&apos;s Connect
               </h3>
-              <p className="text-base text-gray-600 leading-relaxed">
-                I'm always interested in hearing about new projects and
+              <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                I&apos;m always interested in hearing about new projects and
                 opportunities. Whether you have a question or just want to say
                 hi, feel free to reach out!
               </p>
@@ -100,16 +100,16 @@ export function Contact() {
 
             <div className="space-y-6 pt-4">
               <div className="flex items-center gap-4 group">
-                <div className="p-2 rounded-lg bg-gray-50 text-gray-900 group-hover:bg-gray-100 transition-colors">
+                <div className="p-2 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 group-hover:bg-gray-100 dark:group-hover:bg-gray-600 transition-colors">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
                     Email
                   </p>
                   <a
                     href={`mailto:${personalInfo.email}`}
-                    className="text-base text-gray-900 hover:text-blue-600 transition-colors"
+                    className="text-base text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     {personalInfo.email}
                   </a>
@@ -117,16 +117,16 @@ export function Contact() {
               </div>
 
               <div className="flex items-center gap-4 group">
-                <div className="p-2 rounded-lg bg-gray-50 text-gray-900 group-hover:bg-gray-100 transition-colors">
+                <div className="p-2 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 group-hover:bg-gray-100 dark:group-hover:bg-gray-600 transition-colors">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
                     Phone
                   </p>
                   <a
                     href={`tel:${personalInfo.phone}`}
-                    className="text-base text-gray-900 hover:text-blue-600 transition-colors"
+                    className="text-base text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     {personalInfo.phone}
                   </a>
@@ -134,8 +134,22 @@ export function Contact() {
               </div>
 
               <div className="flex items-center gap-4 group">
-           
-           
+                <div className="p-2 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 group-hover:bg-gray-100 dark:group-hover:bg-gray-600 transition-colors">
+                  <Globe className="h-5 w-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
+                    Website
+                  </p>
+                  <a
+                    href={`https://${personalInfo.website}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    {personalInfo.website}
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>

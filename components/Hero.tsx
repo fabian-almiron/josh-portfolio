@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "./ui/Button";
-import { GridPattern } from "./ui/GridPattern";
 import { personalInfo, socialLinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -22,30 +21,18 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white px-4 sm:px-6 lg:px-8"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-white dark:bg-gray-900 px-4 sm:px-6 lg:px-8"
     >
-      {/* Grid Background */}
+      {/* Animated Gradient Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <GridPattern
-          width={40}
-          height={40}
-          x={-1}
-          y={-1}
-          numSquares={200}
-          maxOpacity={0.5}
-          duration={4}
-          repeatDelay={1}
-          interactive
-          colors={[
-            "text-gray-300 fill-gray-300",
-            "text-gray-400 fill-gray-400",
-            "text-gray-200 fill-gray-200",
-          ]}
-          className={cn(
-            "[mask-image:radial-gradient(900px_circle_at_center,white,transparent)]",
-            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 stroke-gray-200"
-          )}
-        />
+        {/* Main gradient orbs */}
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 dark:bg-purple-900 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl opacity-70 dark:opacity-20 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 dark:bg-yellow-900 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl opacity-70 dark:opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 dark:bg-pink-900 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl opacity-70 dark:opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute bottom-8 right-20 w-72 h-72 bg-blue-300 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl opacity-70 dark:opacity-20 animate-blob animation-delay-6000"></div>
+        
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-transparent to-white/50 dark:from-gray-900/50 dark:to-gray-900/50"></div>
       </div>
 
       <div className="relative mx-auto max-w-4xl text-center z-10">
@@ -59,9 +46,9 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="mb-6 inline-block rounded-full bg-blue-50 px-4 py-1.5 backdrop-blur-sm border border-blue-100"
+            className="mb-6 inline-block rounded-full bg-blue-50 dark:bg-blue-900/30 px-4 py-1.5 backdrop-blur-sm border border-blue-100 dark:border-blue-800"
           >
-            <span className="text-sm font-medium text-blue-600">
+            <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
               👋 Hi, my name is
             </span>
           </motion.div>
@@ -70,7 +57,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="mb-6 text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl md:text-7xl lg:text-8xl"
+            className="mb-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl md:text-7xl lg:text-8xl"
           >
             {personalInfo.name}
           </motion.h1>
@@ -90,10 +77,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="mx-auto mb-12 max-w-2xl text-lg text-gray-600 sm:text-xl leading-relaxed"
+            className="mx-auto mb-12 max-w-2xl text-lg text-gray-600 dark:text-gray-300 sm:text-xl leading-relaxed"
           >
-            I&apos;m a <span className="font-bold text-gray-900">{personalInfo.title}</span> specializing
-            in building <span className="text-green-600 font-medium">modern web experiences</span> with a focus on performance,
+            I&apos;m a <span className="font-bold text-gray-900 dark:text-white">{personalInfo.title}</span> specializing
+            in building <span className="text-green-600 dark:text-green-400 font-medium">modern web experiences</span> with a focus on performance,
             accessibility, and user experience.
           </motion.p>
 
@@ -135,7 +122,7 @@ export function Hero() {
               { href: socialLinks.github, icon: Github, label: "GitHub", color: "hover:text-gray-900" },
               { href: socialLinks.linkedin, icon: Linkedin, label: "LinkedIn", color: "hover:text-blue-600" },
               { href: socialLinks.email, icon: Mail, label: "Email", color: "hover:text-red-500" },
-            ].map((social, index) => (
+            ].map((social) => (
               <motion.a
                 key={social.label}
                 href={social.href}

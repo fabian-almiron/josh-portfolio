@@ -34,7 +34,7 @@ export function About() {
     <section
       id="about"
       ref={ref}
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-white"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900"
     >
       <div className="mx-auto max-w-6xl">
         <motion.div
@@ -43,7 +43,7 @@ export function About() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl tracking-tight">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl tracking-tight">
             About Me
           </h2>
         </motion.div>
@@ -93,32 +93,32 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-7 flex flex-col justify-center"
           >
-            <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+            <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                <p>
                  Website Engineer with hands-on experience building and maintaining modern web applications across WordPress, headless CMS, and eCommerce platforms.
                </p>
                <p>
-                 Skilled in <strong className="font-semibold text-gray-900">Next.js, React, Headless WordPress, PHP, and JavaScript</strong>, with a strong focus on UX/UI, performance optimization, and maintainable code.
+                 Skilled in <strong className="font-semibold text-gray-900 dark:text-white">Next.js, React, Headless WordPress, PHP, and JavaScript</strong>, with a strong focus on UX/UI, performance optimization, and maintainable code.
                </p>
                <p>
                  Regularly contributes recommendations around layout, content structure, and technical improvements to support usability, page speed, and conversion goals while collaborating with cross-functional teams.
                </p>
             </div>
 
-            <div className="mt-8 pt-8 border-t border-gray-100">
-               <p className="text-base font-medium text-gray-500 mb-6 uppercase tracking-wider text-sm">
+            <div className="mt-8 pt-8 border-t border-gray-100 dark:border-gray-800">
+               <p className="text-base font-medium text-gray-500 dark:text-gray-400 mb-6 uppercase tracking-wider text-sm">
                   Highlights
                </p>
                <div className="grid gap-4 sm:grid-cols-3">
-                  {highlights.map((highlight, index) => (
+                  {highlights.map((highlight) => (
                     <div key={highlight.label} className="group">
                        <div className="flex items-center gap-3 mb-2">
-                          <div className="p-2 rounded-lg bg-gray-50 text-gray-900 group-hover:bg-gray-100 transition-colors">
+                          <div className="p-2 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 group-hover:bg-gray-100 dark:group-hover:bg-gray-700 transition-colors">
                              <highlight.icon size={20} />
                           </div>
-                          <span className="text-sm font-semibold text-gray-900">{highlight.label}</span>
+                          <span className="text-sm font-semibold text-gray-900 dark:text-white">{highlight.label}</span>
                        </div>
-                       <p className="text-sm text-gray-500 pl-[44px]">{highlight.value}</p>
+                       <p className="text-sm text-gray-500 dark:text-gray-400 pl-[44px]">{highlight.value}</p>
                     </div>
                   ))}
                </div>
